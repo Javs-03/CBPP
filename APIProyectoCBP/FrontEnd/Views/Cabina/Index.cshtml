@@ -1,0 +1,74 @@
+﻿@model IEnumerable<FrontEnd.Models.CabinaViewModel>
+
+@{
+    ViewData["Title"] = "Lista de cabinas";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<!-- ======= Breadcrumbs ======= -->
+<section id="breadcrumbs" class="breadcrumbs">
+    <div class="container">
+    </div>
+</section><!-- End Breadcrumbs -->
+</main><!-- End #main -->
+
+
+<h1>Lista de cabinas</h1>
+
+<p>
+    <a asp-action="Create">Agregar nueva cabina</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.IdCabina)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.DescCabina)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CamasDisponibles)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CantidadPersonas)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.PrecioNoche)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Disponible)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.IdCabina)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DescCabina)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CamasDisponibles)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CantidadPersonas)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.PrecioNoche)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Disponible)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new {  id=item.IdCabina  }) |
+                    @Html.ActionLink("Details", "Details", new {  id=item.IdCabina  }) |
+                    @Html.ActionLink("Delete", "Delete", new {  id=item.IdCabina  })
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

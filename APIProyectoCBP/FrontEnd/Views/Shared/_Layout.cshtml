@@ -1,0 +1,139 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - FrontEnd</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/FrontEnd.styles.css" asp-append-version="true" />
+
+
+    <link href="~/lib/aos/aos.css" rel="stylesheet" />
+
+    <link href="~/lib/bootstrap-icons/bootstrap-icons.css" rel="stylesheet" />
+    <link href="~/lib/boxicons/css/boxicons.min.css" rel="stylesheet" />
+    <link href="~/lib/glightbox/css/glightbox.min.css" rel="stylesheet" />
+    <link href="~/lib/remixicon/remixicon.css" rel="stylesheet" />
+    <link href="~/lib/swiper/swiper-bundle.min.css" rel="stylesheet" />
+
+    <link href="~/css/style.css" rel="stylesheet" />
+    <link href="~/css/stylecarousel.css" rel="stylesheet" />
+    <link href="~/css/owl.theme.default.min.css" rel="stylesheet" />
+    <link href="~/css/owl.carousel.min.css" rel="stylesheet" />
+
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Jost:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+
+
+</head>
+<body>
+    <header id="header" class="fixed-top ">
+        <div class="container d-flex align-items-center">
+            <!-- Uncomment below if you prefer to use an image logo -->
+            <a href="index.html" class="logo me-auto"><img src="~/img/logo.png" alt="" class="img-fluid"></a>
+            <h1 class="logo me-auto"><a href="index.html">Cabinas Beach Paradise</a></h1>
+
+            <nav id="navbar" class="navbar">
+                <ul>
+                    <li><a class="nav-link active"> @Html.ActionLink("Home", "Index", "Home") </a></li>
+                    <li><a class="nav-link">@Html.ActionLink("Actividades", "Actividades", "Home")</a></li>
+                    <li><a class="nav-link"> @Html.ActionLink("Precios", "Precios", "Home") </a></li>
+                    <li><a class="nav-link"> @Html.ActionLink("Sobre Nosotros", "About", "Home") </a></li>
+                    <li><a class="nav-link"> @Html.ActionLink("Contacto", "Contact", "Home") </a></li>
+                    <li><a class="nav-link"> @Html.ActionLink("Reseñas", "Resenias", "Home") </a></li>
+                    <li><a class="nav-link">@Html.ActionLink("Iniciar sesión", "Login", "Home")</a></li>
+                    <li><a class="nav-link">@Html.ActionLink("Crear cuenta", "Register", "Home")</a></li>
+
+                    <li><a class="nav-link">@Html.ActionLink("Inventario", "Inventario", "Admin")</a></li>
+                    <li><a class="nav-link">@Html.ActionLink("Reservas", "IndexCliente", "Reserva")</a></li>
+                    <li><a class="nav-link">@Html.ActionLink("Usuarios", "ViewUsers", "Admin")</a></li>
+                </ul>
+                <i class="bi bi-list mobile-nav-toggle"></i>
+            </nav><!-- .navbar -->
+
+        </div>
+    </header><!-- End Header -->
+
+
+    <div class="container">
+        <main role="main" class="pb-3">
+            @RenderBody()
+        </main>
+    </div>
+
+
+    <!-- ======= Footer ======= -->
+    <footer id="footer">
+
+        <div class="footer-top">
+            <div class="container">
+                <div class="row">
+
+                    <div class="col-lg-3 col-md-6 footer-contact">
+                        <h3>Cabinas Beach Paradise</h3>
+                        <p>
+                            Playa Banca de Santa Cruz, <br>
+                            Guanacaste<br>
+                            Costa Rica <br><br>
+                            <strong>Teléfono:</strong> (+506) 8828-8861<br>
+                            <strong>Email:</strong> info@example.com<br>
+                        </p>
+                    </div>
+
+                    <div class="col-lg-3 col-md-6 footer-links">
+                        <h4>Links útiles</h4>
+                        <ul>
+                            <li><i class="bx bx-chevron-right"></i> <a href="#">Home</a></li>
+                            <li><i class="bx bx-chevron-right"></i> <a href="#">Precios</a></li>
+                            <li><i class="bx bx-chevron-right"></i> <a href="#">Sobre nosotros</a></li>
+                            <li><i class="bx bx-chevron-right"></i> <a href="#">Contáctenos</a></li>
+                            <li><i class="bx bx-chevron-right"></i> <a href="#">Iniciar sesión</a></li>
+                        </ul>
+                    </div>
+
+                    <div class="col-lg-3 col-md-6 footer-links">
+                        <h4>Nuestras redes</h4>
+                        <p>Seguínos en nuestras redes para mantenerte actualizado</p>
+                        <div class="social-links mt-3">
+                            <a href="https://www.facebook.com/beachparadisecabinas/?show_switched_toast=0&show_invite_to_follow=0&show_switched_tooltip=0&show_podcast_settings=0&show_community_transition=0&show_community_review_changes=0&show_follower_visibility_disclosure=0" class="facebook"><i class="bx bxl-facebook"></i></a>
+                            <a href="https://www.instagram.com/cabinasbeachparadise/" class="instagram"><i class="bx bxl-instagram"></i></a>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+        <div class="container footer-bottom clearfix">
+            <div class="copyright">
+                <strong><span>&copy; @DateTime.Now.Year</span></strong>. All Rights Reserved
+            </div>
+        </div>
+    </footer><!-- End Footer -->
+    
+    
+    
+    <!--  JS Section -->
+
+    <script src="~/js/main.js"></script>
+    <script src="~/lib/aos/aos.js"></script>
+    <script src="~/lib/glightbox/js/glightbox.js"></script>
+    <script src="~/lib/glightbox/js/glightbox.min.js"></script>
+    <script src="~/lib/isotope-layout/isotope.pkgd.min.js"></script>
+    <script src="~/lib/swiper/swiper-bundle.min.js"></script>
+    <script src="~/lib/waypoints/noframework.waypoints.js"></script>
+
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+
+    <!-- Main JS File -->
+    <script src="~/js/main.js"></script>
+    <!-- End JS Section -->
+
+
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>

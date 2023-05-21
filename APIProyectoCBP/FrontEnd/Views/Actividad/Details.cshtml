@@ -1,0 +1,50 @@
+﻿@model FrontEnd.Models.ActividadViewModel
+
+@{
+    ViewData["Title"] = "Detalles de la actividad";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<!-- ======= Breadcrumbs ======= -->
+<section id="breadcrumbs" class="breadcrumbs">
+    <div class="container">
+    </div>
+</section><!-- End Breadcrumbs -->
+</main><!-- End #main -->
+
+<h1>Detalles de la actividad</h1>
+
+<div>
+    <h4>Actividad: @Html.DisplayFor(model => model.DescActividad)</h4>
+    <hr />
+    <dl class="row">
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.IdActividad)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.IdActividad)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.DescActividad)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.DescActividad)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.HorarioDisponible)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.HorarioDisponible)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.CuposDisponible)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.CuposDisponible)
+        </dd>
+    </dl>
+</div>
+<div>
+    @Html.ActionLink("Edit", "Edit", new { /* id = Model.PrimaryKey */ }) |
+    <a asp-action="Index">Back to List</a>
+</div>

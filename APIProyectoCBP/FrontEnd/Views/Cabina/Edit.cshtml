@@ -1,0 +1,66 @@
+﻿@model FrontEnd.Models.CabinaViewModel
+
+@{
+    ViewData["Title"] = "Editar información de cabina";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<!-- ======= Breadcrumbs ======= -->
+<section id="breadcrumbs" class="breadcrumbs">
+    <div class="container">
+    </div>
+</section><!-- End Breadcrumbs -->
+</main><!-- End #main -->
+
+<h1>Editar información de cabina</h1>
+
+<h4>Cabina: @Html.DisplayFor(model => model.DescCabina)</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Edit">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="IdCabina" class="control-label"></label>
+                <input asp-for="IdCabina" class="form-control" />
+                <span asp-validation-for="IdCabina" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="DescCabina" class="control-label"></label>
+                <input asp-for="DescCabina" class="form-control" />
+                <span asp-validation-for="DescCabina" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="CamasDisponibles" class="control-label"></label>
+                <input asp-for="CamasDisponibles" class="form-control" />
+                <span asp-validation-for="CamasDisponibles" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="CantidadPersonas" class="control-label"></label>
+                <input asp-for="CantidadPersonas" class="form-control" />
+                <span asp-validation-for="CantidadPersonas" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="PrecioNoche" class="control-label"></label>
+                <input asp-for="PrecioNoche" class="form-control" />
+                <span asp-validation-for="PrecioNoche" class="text-danger"></span>
+            </div>
+            <div class="form-group form-check">
+                <label class="form-check-label">
+                    <input class="form-check-input" asp-for="Disponible" /> @Html.DisplayNameFor(model => model.Disponible)
+                </label>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

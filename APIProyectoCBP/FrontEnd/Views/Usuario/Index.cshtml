@@ -1,0 +1,67 @@
+﻿@model IEnumerable<FrontEnd.Models.UsuarioViewModel>
+
+@{
+    ViewData["Title"] = "Usuarios";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<!-- ======= Breadcrumbs ======= -->
+<section id="breadcrumbs" class="breadcrumbs">
+    <div class="container">
+    </div>
+</section><!-- End Breadcrumbs -->
+</main><!-- End #main -->
+
+<h1>Index</h1>
+
+<p>
+    <a asp-action="Create">Agregar nuevo usuario</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.IdUsuario)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.NombreUsuario)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Contrasena)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.IdRol)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Estado)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.IdUsuario)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.NombreUsuario)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Contrasena)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.IdRol)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Estado)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new {  id=item.IdUsuario  }) |
+                @Html.ActionLink("Details", "Details", new {  id=item.IdUsuario  }) |
+                @Html.ActionLink("Delete", "Delete", new {  id=item.IdUsuario  })
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

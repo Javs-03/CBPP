@@ -1,0 +1,55 @@
+﻿@model IEnumerable<FrontEnd.Models.InventarioViewModel>
+
+@{
+    ViewData["Title"] = "Lista de inventario";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<!-- ======= Breadcrumbs ======= -->
+<section id="breadcrumbs" class="breadcrumbs">
+    <div class="container">
+    </div>
+</section><!-- End Breadcrumbs -->
+</main><!-- End #main -->
+
+<h1>Lista de inventario</h1>
+
+<p>
+    <a asp-action="Create">Agregar nuevo item al inventario</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.IdProducto)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.DescProducto)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CantidadDisponible)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.IdProducto)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DescProducto)
+            </td>
+            <td>
+                    @Html.DisplayFor(modelItem => item.CantidadDisponible)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new {  id=item.IdProducto  }) |
+                    @Html.ActionLink("Details", "Details", new {  id=item.IdProducto  }) |
+                    @Html.ActionLink("Delete", "Delete", new {  id=item.IdProducto  })
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

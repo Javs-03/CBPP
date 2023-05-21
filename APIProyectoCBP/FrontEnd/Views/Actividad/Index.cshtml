@@ -1,0 +1,64 @@
+﻿@model IEnumerable<FrontEnd.Models.ActividadViewModel>
+
+
+@{
+    ViewData["Title"] = "Lista de actividades";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+<br />
+<br />
+
+<!-- ======= Breadcrumbs ======= -->
+<section id="breadcrumbs" class="breadcrumbs">
+    <div class="container">
+    </div>
+</section><!-- End Breadcrumbs -->
+</main><!-- End #main -->
+
+<h1>Lista de actividades</h1>
+
+<p>
+    <a asp-action="Create">Agregar nueva actividad</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.IdActividad)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.DescActividad)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.HorarioDisponible)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CuposDisponible)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.IdActividad)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DescActividad)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.HorarioDisponible)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CuposDisponible)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id=item.IdActividad }) |
+                    @Html.ActionLink("Details", "Details", new { id=item.IdActividad  }) |
+                    @Html.ActionLink("Delete", "Delete", new { id=item.IdActividad })
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

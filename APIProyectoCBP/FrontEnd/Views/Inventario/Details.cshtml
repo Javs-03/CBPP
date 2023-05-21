@@ -1,0 +1,45 @@
+﻿@model FrontEnd.Models.InventarioViewModel
+
+@{
+    ViewData["Title"] = "Detalles del inventario";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+
+}
+
+<!-- ======= Breadcrumbs ======= -->
+<section id="breadcrumbs" class="breadcrumbs">
+    <div class="container">
+    </div>
+</section><!-- End Breadcrumbs -->
+</main><!-- End #main -->
+
+<h1>Detalles del Inventario</h1>
+
+<div>
+    <h4>@Html.DisplayFor(model => model.DescProducto) en inventario</h4>
+    <hr />
+    <dl class="row">
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.IdProducto)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.IdProducto)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.DescProducto)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.DescProducto)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.CantidadDisponible)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.CantidadDisponible)
+        </dd>
+    </dl>
+</div>
+<div>
+    @Html.ActionLink("Edit", "Edit", new {  id = Model.IdProducto  }) |
+    <a asp-action="Index">Back to List</a>
+</div>

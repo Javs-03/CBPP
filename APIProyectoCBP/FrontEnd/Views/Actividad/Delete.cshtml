@@ -1,0 +1,52 @@
+﻿@model FrontEnd.Models.ActividadViewModel
+
+@{
+    ViewData["Title"] = "Borrar actividad";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<!-- ======= Breadcrumbs ======= -->
+<section id="breadcrumbs" class="breadcrumbs">
+    <div class="container">
+    </div>
+</section><!-- End Breadcrumbs -->
+</main><!-- End #main -->
+
+<h1>Borrar Actividad</h1>
+
+<h3>¿Estás segurro de que quieres eliminar esta actividad?</h3>
+<div>
+    <h4>Actividad: @Html.DisplayFor(model => model.DescActividad)</h4>
+    <hr />
+    <dl class="row">
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.IdActividad)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.IdActividad)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.DescActividad)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.DescActividad)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.HorarioDisponible)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.HorarioDisponible)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.CuposDisponible)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.CuposDisponible)
+        </dd>
+    </dl>
+    
+    <form asp-action="Delete">
+        <input type="submit" value="Delete" class="btn btn-danger" /> |
+        <a asp-action="Index">Back to List</a>
+    </form>
+</div>

@@ -1,4 +1,4 @@
-using BackEnd.Modelos;
+using FrontEnd.Models;
 using FrontEnd.Repository;
 using Microsoft.EntityFrameworkCore;
 

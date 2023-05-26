@@ -6,11 +6,14 @@ namespace FrontEnd.Models
 {
     public class UsuarioViewModel
     {
+        [Key]
         public int IdUsuario { get; set; } = 0;
-        [Display(Name = "Usuario")]
+        [Required(ErrorMessage = "Please Enter Username")]
+        [Display(Name = "Please Enter Username")]
         public string NombreUsuario { get; set; } = string.Empty;
-        
-        [Display(Name = "Contraseña")]
+
+        [Required(ErrorMessage = "Please Enter Password")]
+        [Display(Name = "Please Enter Password")]
         public string Contrasena { get; set; }= string.Empty;
         
         [Display(Name = "Rol")]

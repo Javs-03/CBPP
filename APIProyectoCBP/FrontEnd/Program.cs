@@ -1,6 +1,14 @@
+using BackEnd.Modelos;
+using FrontEnd.Repository;
+using Microsoft.EntityFrameworkCore;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
+
+builder.Services.AddDbContext<LoginDBContext>(conn => conn.UseSqlServer(builder.Configuration.GetConnectionString("connectionstr")));
+builder.Services.AddScoped<ILogin, AuthenticateLogin>();
+
 builder.Services.AddControllersWithViews();
 
 var app = builder.Build();

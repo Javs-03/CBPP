@@ -25,20 +25,21 @@
                                     <h2>Iniciar sesión</h2>
                                     <p>Inicia sesión para proceder a realizar una reserva con nosotros :D</p>
                                 </div>
-                                        <form>
+                                        <form method="post" enctype="multipart/form-data" asp-controller="Login" asp-action="Index">
                                             <div class="form-group">
                                                 <label for="inputEmail">Correo electrónico</label>
-                                                <input type="email" class="form-control" id="inputEmail" placeholder="Ingresa tu correo electrónico">
+                                                <input type="email" name="username" class="form-control" id="inputEmail" placeholder="Ingresa tu correo electrónico">
                                             </div>
                                             <div class="form-group">
                                                 <label for="inputPassword">Contraseña</label>
-                                                <input type="password" class="form-control" id="inputPassword" placeholder="Ingresa tu contraseña">
+                                                <input type="password" name="password" class="form-control" id="inputPassword" placeholder="Ingresa tu contraseña">
                                             </div>
                                             <div class="form-group form-check">
                                                 <input type="checkbox" class="form-check-input" id="rememberMe">
                                                 <label class="form-check-label" for="rememberMe">Recordarme</label>
                                             </div>
                                             <button type="submit" class="btn btn-primary btn-block" id="login-button">Iniciar sesión</button>
+                                            @ViewBag.username
                                         </form>
                                         <hr>
                                         <div class="text-center">

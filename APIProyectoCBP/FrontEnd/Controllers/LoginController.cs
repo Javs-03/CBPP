@@ -37,12 +37,13 @@ namespace FrontEnd.Controllers
                 ViewBag.username = string.Format("Successfully logged-in", username);
 
                 TempData["username"] = "Byron";
-                return RedirectToAction("Index", "Layout");
+                return RedirectToAction("Index", "Home");
             }
             else
             {
                 ViewBag.username = string.Format("Login Failed ", username);
-                return View();
+               // return View();
+                return RedirectToAction("Login", "Home");
             }
         }
     }

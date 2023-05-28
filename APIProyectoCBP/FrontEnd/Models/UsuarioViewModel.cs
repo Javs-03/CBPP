@@ -7,7 +7,7 @@ namespace FrontEnd.Models
     public class UsuarioViewModel
     {
         [Key]
-        public int IdUsuario { get; set; } = 0;
+        public int IdUsuario { get; set; } =0;
         [Required(ErrorMessage = "Please Enter Username")]
         [Display(Name = "Please Enter Username")]
         public string NombreUsuario { get; set; } = string.Empty;

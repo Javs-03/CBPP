@@ -15,7 +15,7 @@ namespace FrontEnd.Models
 
         }
 
-        public  DbSet<UsuarioViewModel> UsuarioModel    { get; set; }
+        public  DbSet<UsuarioViewModel> Usuario{ get; set; }
 
         protected override void OnModelCreating(ModelBuilder builder) { 
         

@@ -16,13 +16,13 @@ namespace FrontEnd.Repository
         }
         public async Task<UsuarioViewModel> AuthenticateUser(string username, string password) 
         {
-            var succeeded = await _dbContext.UsuarioModel.FirstOrDefaultAsync(authUser => authUser.NombreUsuario == username && authUser.Contrasena == password);
+            var succeeded = await _dbContext.Usuario.FirstOrDefaultAsync(authUser => authUser.NombreUsuario == username && authUser.Contrasena == password);
             return succeeded;
         }
 
         public async Task<IEnumerable<UsuarioViewModel>> getuser() 
         {
-            return await _dbContext.UsuarioModel.ToListAsync();
+            return await _dbContext.Usuario.ToListAsync();
         }
     }
 }

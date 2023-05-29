@@ -1,6 +1,14 @@
+using FrontEnd.Models;
+using FrontEnd.Repository;
+using Microsoft.EntityFrameworkCore;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
+
+builder.Services.AddDbContext<LoginDBContext>(conn => conn.UseSqlServer(builder.Configuration.GetConnectionString("connectionstr")));
+builder.Services.AddScoped<ILogin, AuthenticateLogin>();
+
 builder.Services.AddControllersWithViews();
 
 var app = builder.Build();
@@ -18,6 +26,6 @@ app.UseAuthorization();
 
 app.MapControllerRoute(
     name: "default",
-    pattern: "{controller=Home}/{action=Index}/{id?}");
+    pattern: "{controller=Home}/{action=Login}/{id?}");
 
 app.Run();
